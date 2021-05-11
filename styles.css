@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap");
+
+:root {
+  /* Colors */
+  --vdrkblue: hsl(233, 47%, 7%);
+  --drkblue: hsl(244, 38%, 16%);
+  --sftviolet: hsl(277, 64%, 61%);
+  --white: hsl(0, 0%, 100%);
+  --white-paragraph: hsla(0, 0%, 100%, 0.75);
+  --white-heading: hsla(0, 0%, 100%, 0.6);
+  /* Typography */
+  --fs-body: 0.9375rem;
+  --ff-primary: "Inter", sans-serif;
+  --ff-secondary: "Lexend Deca", sans-serif;
+  --fw-regular: 400;
+  --fw-bold: 700;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: var(--vdrkblue);
+  font-family: var(--ff-primary);
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 5.3125rem;
+  margin-bottom: 5.3125rem;
+  color: var(--white);
+  background-color: var(--drkblue);
+  border-radius: 0 0 0.3125rem 0.3125rem;
+}
+
+/* text section */
+main .text {
+  order: 2;
+  margin: 2.1875rem;
+  font-weight: var(--fw-regular);
+}
+
+main .text h2 {
+  margin-bottom: 1rem;
+  font-weight: var(--fw-bold);
+}
+
+main .text h2 span {
+  color: var(--sftviolet);
+  font-weight: var(--fw-bold);
+}
+
+main .text > p {
+  color: var(--white-paragraph);
+  font-size: var(--fs-body);
+  font-family: var(--ff-primary);
+  margin-bottom: 2.8125rem;
+}
+
+main .text .stats .stats__number {
+  margin-bottom: 0.625rem;
+  font-family: var(--white-heading);
+}
+
+main .text .stats .stats__text {
+  margin-bottom: 1.875rem;
+  color: var(--white-paragraph);
+  font-family: var(--ff-secondary);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+}
+
+main .text .stats .query .stats__text {
+  margin-bottom: 0;
+}
+
+/* image section */
+main .image {
+  background-color: var(--sftviolet);
+  border-radius: 0.3125rem 0.3125rem 0 0;
+}
+
+main .image .mobile-pic {
+  display: block;
+  width: 100%;
+  order: 1;
+  object-fit: cover;
+  mix-blend-mode: multiply;
+  overflow: hidden;
+}
+
+main .image .desktop-pic {
+  display: none;
+}
+
+@media (min-width: 750px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    justify-content: center;
+    align-items: center;
+  }
+  main {
+    flex-direction: row;
+    width: 90%;
+    max-width: 900px;
+    border-radius: 0.3125rem 0 0 0.3125rem;
+  }
+  /* text section */
+  main .text {
+    order: 1;
+    width: 40%;
+    text-align: left;
+    margin: 3rem;
+  }
+
+  main .text .stats {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 0;
+  }
+
+  main .text .stats .template,
+  main .text .stats .query {
+    margin-left: 1rem;
+  }
+
+  /* image section */
+  main .image {
+    order: 2;
+    width: 50%;
+    border-radius: 0 0.3125rem 0.3125rem 0;
+  }
+
+  main .image .desktop-pic {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    mix-blend-mode: multiply;
+    overflow: hidden;
+  }
+
+  main .image .mobile-pic {
+    display: none;
+  }
+}
