@@ -124,8 +124,9 @@ main .image .desktop-pic {
   }
   /* text section */
   main .text {
+    flex: 1;
     order: 1;
-    width: 40%;
+    width: 50%;
     text-align: left;
     margin: 3rem;
   }
